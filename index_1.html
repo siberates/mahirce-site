@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mahir Yildiz | Dental Office Automation</title>
+<meta name="description" content="I help independent dental offices answer patients faster with missed-call text back, simple booking requests, and a website helper.">
+<link rel="icon" type="image/png" href="logo-my-sm.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0c2a4c; --navy-2:#123a63; --teal:#0d6f80; --teal-2:#178a9b;
+  --ink:#1c2c3d; --muted:#4a5b6c; --soft:#eef5f7; --line:#dfe9ee;
+  --bg:#ffffff; --card:#ffffff; --icon-bg:#e4f0f3;
+  --serif:"Playfair Display", Georgia, "Times New Roman", serif;
+  --sans:"Source Sans 3", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{display:block;max-width:100%}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+
+/* coming soon strip */
+.strip{background:var(--navy);color:#dbe8f2;font-size:13.5px;text-align:center;padding:8px 16px;letter-spacing:.02em}
+.strip a{color:#fff;font-weight:600;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.4)}
+
+/* header */
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:saturate(1.2) blur(6px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:24px;height:84px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand img{width:58px;height:auto}
+.brand .t1{font-family:var(--serif);font-weight:700;font-size:26px;letter-spacing:.06em;color:var(--navy);line-height:1}
+.brand .t2{font-size:10.5px;letter-spacing:.32em;color:var(--navy-2);margin-top:6px;font-weight:600}
+.links{display:flex;gap:30px;align-items:center}
+.links a{text-decoration:none;font-size:15.5px;color:var(--ink);padding:6px 0;border-bottom:2px solid transparent;cursor:pointer}
+.links a.active{color:var(--navy);font-weight:600;border-bottom-color:var(--teal)}
+.links a:hover{color:var(--teal)}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--sans);font-weight:600;font-size:16px;text-decoration:none;border-radius:10px;padding:14px 22px;border:1.5px solid transparent;cursor:pointer;transition:transform .15s ease, box-shadow .15s ease, background .15s ease}
+.btn svg{width:19px;height:19px;flex:none}
+.btn-primary{background:linear-gradient(180deg,var(--navy-2),var(--navy));color:#fff;box-shadow:0 8px 20px -10px rgba(12,42,76,.6)}
+.btn-primary:hover{transform:translateY(-1px);box-shadow:0 12px 24px -10px rgba(12,42,76,.7)}
+.btn-ghost{background:#fff;color:var(--navy);border-color:#b9cbd8}
+.btn-ghost:hover{border-color:var(--navy)}
+.menu-btn{display:none;background:none;border:0;padding:8px;cursor:pointer;color:var(--navy)}
+.menu-btn svg{width:30px;height:30px}
+
+/* hero */
+.hero{position:relative;overflow:hidden;background:linear-gradient(90deg,#fbfdfe 0%,#f3f8fa 55%,#eaf2f5 100%)}
+.hero-grid{display:block;min-height:600px}
+.hero-text{max-width:600px}
+.hero-text{padding:64px 0 56px;position:relative;z-index:2}
+.eyebrow{font-size:13px;letter-spacing:.32em;color:var(--teal);font-weight:600;text-transform:uppercase;margin:0 0 18px}
+h1{font-family:var(--serif);font-weight:700;color:var(--navy);font-size:clamp(40px,5.2vw,66px);line-height:1.04;letter-spacing:-.01em;margin:0 0 24px}
+h1 .teal{color:var(--teal)}
+.lede{font-size:clamp(17px,1.5vw,20px);color:#334556;max-width:34em;margin:0 0 30px}
+.cta{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:38px}
+.perks{display:flex;flex-wrap:wrap;gap:28px}
+.perk{display:flex;align-items:center;gap:12px;font-size:14.5px;color:#2b3c4d;line-height:1.3;max-width:170px}
+.ic{flex:none;display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:var(--icon-bg);color:var(--teal)}
+.ic svg{width:22px;height:22px}
+.hero-photo{position:absolute;right:0;top:0;bottom:0;width:46%}
+.hero-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 18%}
+.hero-photo::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,#f3f8fa 0%,rgba(243,248,250,.0) 22%)}
+.sig{position:absolute;right:48px;bottom:70px;z-index:2;color:#fff;text-align:right;text-shadow:0 2px 12px rgba(0,0,0,.35)}
+.sig .name{font-family:"Great Vibes",cursive;font-size:44px;line-height:1}
+.sig .role{font-size:11px;letter-spacing:.35em;margin-top:6px;border-top:1px solid rgba(255,255,255,.7);padding-top:6px;display:inline-block}
+
+/* services */
+.services{position:relative;z-index:3;margin-top:-34px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:var(--card);border-radius:16px;padding:26px 24px;box-shadow:0 18px 40px -26px rgba(12,42,76,.35);border:1px solid #edf2f5;display:flex;gap:18px;align-items:flex-start;text-decoration:none}
+.card .ic{width:64px;height:64px}
+.card .ic svg{width:28px;height:28px}
+.card h3{font-family:var(--serif);font-weight:700;font-size:22px;color:var(--navy);margin:2px 0 6px}
+.card p{margin:0;color:var(--muted);font-size:15.5px}
+.card .go{margin-left:auto;align-self:center;flex:none;width:30px;height:30px;border-radius:50%;background:var(--soft);display:grid;place-items:center;color:var(--navy)}
+.card .go svg{width:14px;height:14px}
+
+/* flow */
+.flow{margin:28px 0 0;background:var(--soft);border-radius:16px;padding:26px 30px;display:grid;grid-template-columns:200px repeat(4,1fr);align-items:center;gap:10px}
+.flow .label{font-size:13px;letter-spacing:.24em;font-weight:700;color:var(--navy);line-height:1.6}
+.step{display:flex;align-items:center;gap:12px;position:relative;font-size:15px;color:#2b3c4d;line-height:1.3}
+.step .ic{background:#fff;width:52px;height:52px;box-shadow:0 6px 16px -10px rgba(12,42,76,.4)}
+.step .badge{position:absolute;left:36px;top:-4px;background:#e2513b;color:#fff;font-size:10px;font-weight:700;width:17px;height:17px;border-radius:50%;display:grid;place-items:center}
+.step + .step::before{content:"";position:absolute;left:-26px;top:50%;width:18px;height:2px;background:#9fbccb}
+.step + .step::after{content:"";position:absolute;left:-12px;top:calc(50% - 4px);border:5px solid transparent;border-left-color:#9fbccb;border-right:0}
+
+/* founder */
+.f-phone{background:#fff;border:6px solid var(--navy);border-radius:26px;padding:10px 10px 14px;box-shadow:0 14px 30px -20px rgba(12,42,76,.6);max-width:220px}
+.ph-top{text-align:center;border-bottom:1px solid #e6ecf2;padding-bottom:8px;margin-bottom:8px}
+.ph-name{display:block;font-weight:700;color:var(--navy);font-size:14px}
+.ph-sub{font-size:11px;color:#7a8a99}
+.ph-body{display:flex;flex-direction:column;gap:6px}
+.msg{margin:0;font-size:12.5px;line-height:1.35;padding:7px 10px;border-radius:14px;max-width:85%}
+.msg.in{background:#eef2f6;color:#22313f;align-self:flex-start;border-bottom-left-radius:4px}
+.msg.out{background:var(--teal);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
+.msg.ok{align-self:center;font-size:11.5px;font-weight:600;color:var(--teal);background:none;padding:2px 0}
+
+.founder{padding:56px 0 64px}
+.f-grid{display:grid;grid-template-columns:200px 1fr 1.25fr 300px;gap:34px;align-items:center}
+.f-photo{border-radius:14px;overflow:hidden;box-shadow:0 14px 30px -20px rgba(12,42,76,.6)}
+.f-head .eyebrow{margin-bottom:10px}
+.f-head h2{font-family:var(--serif);font-weight:700;color:var(--navy);font-size:clamp(30px,3vw,40px);line-height:1.12;margin:0}
+.f-head .bar{width:46px;height:3px;background:var(--teal);margin-top:18px;border-radius:2px}
+.f-text p{margin:0 0 10px;color:#3a4b5c;font-size:16px}
+.f-facts{background:var(--soft);border-radius:14px;padding:18px 20px;display:grid;gap:14px}
+.fact{display:flex;align-items:center;gap:12px;font-size:14.5px;color:#2b3c4d}
+.fact .ic{width:38px;height:38px;background:#fff}
+.fact .ic svg{width:18px;height:18px}
+
+/* contact */
+.contact{background:linear-gradient(180deg,var(--navy-2),var(--navy));color:#fff}
+.contact .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;padding-top:40px;padding-bottom:40px}
+.contact h2{font-family:var(--serif);font-size:clamp(26px,2.6vw,34px);margin:0 0 6px}
+.contact p{margin:0;color:#cfe0ee}
+.contact .btn-ghost{border-color:#fff}
+footer{background:#081f39;color:#9fb6ca;font-size:13.5px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;padding-top:18px;padding-bottom:18px}
+
+/* coming soon toast */
+.toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:var(--navy);color:#fff;padding:12px 20px;border-radius:10px;font-size:15px;box-shadow:0 14px 30px -12px rgba(0,0,0,.45);transition:all .25s ease;z-index:50}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+
+/* mobile menu */
+.mnav{display:none}
+
+@media (max-width:1060px){
+  .links{gap:20px}
+  .f-grid{grid-template-columns:170px 1fr;}
+  .f-text,.f-facts{grid-column:1 / -1}
+  .flow{grid-template-columns:1fr 1fr;row-gap:22px}
+  .flow .label{grid-column:1 / -1}
+  .step + .step::before,.step + .step::after{display:none}
+}
+@media (max-width:900px){
+  .links,.nav .btn{display:none}
+  .menu-btn{display:block}
+  .nav{height:72px}
+  .brand img{width:48px}
+  .brand .t1{font-size:22px}
+  .brand .t2{font-size:9px}
+  .mnav.open{display:flex;flex-direction:column;border-top:1px solid var(--line);padding:8px 28px 16px;background:#fff}
+  .mnav a{padding:12px 0;text-decoration:none;border-bottom:1px solid #f0f4f6;cursor:pointer}
+  .hero-grid{min-height:0}
+  .hero-photo{position:absolute;right:0;top:0;bottom:0;width:52%;}
+  .hero-photo::before{background:linear-gradient(90deg,rgba(246,250,251,.95) 0%,rgba(246,250,251,.35) 28%,rgba(246,250,251,0) 50%)}
+  .hero-photo img{object-position:68% 12%}
+  .sig{display:none}
+  .hero-text{padding:36px 0 64px}
+  h1{max-width:9.5em}
+  .lede{max-width:20em}
+  .cta{flex-direction:column;align-items:flex-start;max-width:320px}
+  .cta .btn{width:100%;justify-content:center}
+  .perks{display:none}
+  .cards{grid-template-columns:1fr}
+}
+@media (max-width:560px){
+  body{font-size:16px}
+  .wrap{padding:0 18px}
+  .hero-photo{width:58%}
+  .hero-text{padding:28px 0 56px}
+  h1{font-size:31px;max-width:none}
+  .hero-text .eyebrow,.hero-text h1,.hero-text .lede{width:60%}
+  .hero-text .eyebrow{font-size:10.5px;letter-spacing:.22em}
+  .lede{font-size:15px;max-width:none}
+  .cta{max-width:62%}
+  .cta .btn{padding:12px 14px;font-size:15px}
+  .card{padding:20px 18px}
+  .card .ic{width:56px;height:56px}
+  .flow{padding:20px 18px;grid-template-columns:1fr 1fr}
+  .f-grid{grid-template-columns:1fr;gap:20px}
+  .f-phone{max-width:240px;margin:0 auto}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<div class="strip">Our full website is coming soon. Questions? Email me anytime at <a href="mailto:mahir@getmahirce.com">mahir@getmahirce.com</a></div>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#home" aria-label="Mahir Yildiz, Dental Office Automation">
+      <img src="logo-my-sm.png" alt="">
+      <div><div class="t1">MAHIR YILDIZ</div><div class="t2">DENTAL OFFICE AUTOMATION</div></div>
+    </a>
+    <nav class="links" aria-label="Main">
+      <a href="#home" class="active">Home</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#how">How It Works</a>
+      <a data-soon>Results</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn-primary" href="mailto:mahir@getmahirce.com?subject=Question%20about%20your%20dental%20office%20automation">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg>
+      Email Mahir
+    </a>
+    <button class="menu-btn" aria-label="Open menu" aria-expanded="false" id="menuBtn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+  <nav class="mnav" id="mnav" aria-label="Mobile">
+    <a href="#home">Home</a><a href="#services">Services</a><a href="#about">About</a><a href="#how">How It Works</a><a data-soon>Results</a><a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main id="home">
+  <section class="hero">
+    <div class="hero-photo">
+        <img src="mahir-hero.jpg" alt="Mahir Yildiz at his desk">
+        <div class="sig"><div class="name">Mahir Yildiz</div><div class="role">FOUNDER</div></div>
+      </div>
+    <div class="wrap hero-grid">
+      <div class="hero-text">
+        <p class="eyebrow">Simpler systems. Happier patients.</p>
+        <h1>Turn missed calls into <span class="teal">more booked</span> patients.</h1>
+        <p class="lede">I help independent dental offices in the San Francisco Bay Area answer patients faster with missed-call text back, simple booking requests, and a website helper.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="mailto:mahir@getmahirce.com?subject=Question%20about%20your%20dental%20office%20automation">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg>
+            Email Mahir
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 6 6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="#how">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M10 8.5v7l5.5-3.5z" fill="currentColor" stroke="none"/></svg>
+            See how it works
+          </a>
+        </div>
+        <div class="perks">
+          <div class="perk"><span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="4" y="13" width="3.5" height="7" rx="1"/><rect x="10.25" y="9" width="3.5" height="11" rx="1"/><rect x="16.5" y="5" width="3.5" height="15" rx="1"/></svg></span>More booked patients</div>
+          <div class="perk"><span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="8" r="3.3"/><circle cx="5.5" cy="9.5" r="2.5"/><circle cx="18.5" cy="9.5" r="2.5"/><path d="M6 19c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5z"/><path d="M1.5 18.5c0-2.4 1.8-4 4-4 .9 0 1.7.2 2.3.7-1 1-1.6 2.3-1.8 3.8H1.5zM22.5 18.5c0-2.4-1.8-4-4-4-.9 0-1.7.2-2.3.7 1 1 1.6 2.3 1.8 3.8h4.5z"/></svg></span>A better patient experience</div>
+          <div class="perk"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3 5 6v5c0 4.5 3 8.3 7 10 4-1.7 7-5.5 7-10V6z"/><path d="m9 12 2 2 4-4"/></svg></span>Simple, reliable solutions</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="wrap">
+      <div class="cards">
+        <a class="card" href="#how">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 12a8 7 0 1 1 3.2 5.6L4 19l1-3.4A6.8 6.8 0 0 1 4 12z"/><circle cx="8.5" cy="12" r=".9" fill="currentColor"/><circle cx="12" cy="12" r=".9" fill="currentColor"/><circle cx="15.5" cy="12" r=".9" fill="currentColor"/></svg></span>
+          <div><h3>Missed-call text back</h3><p>Automatically text patients who call and don't reach you, so you never miss an opportunity.</p></div>
+          <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="card" href="#how">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/><path d="M7.5 13h2M11 13h2M14.5 13h2M7.5 16.5h2M11 16.5h2" stroke-linecap="round"/></svg></span>
+          <div><h3>Simple booking requests</h3><p>Let patients easily request appointments, with a smooth and friendly experience.</p></div>
+          <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a class="card" href="#how">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="4" y="5" width="16" height="11" rx="1.5"/><path d="M2 19h20"/></svg></span>
+          <div><h3>Website helper</h3><p>A cleaner, more helpful website that answers common questions and guides patients to book.</p></div>
+          <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span>
+        </a>
+      </div>
+
+      <div class="flow" id="how">
+        <div class="label">FROM MISSED CALL<br>TO BOOKING REQUEST</div>
+        <div class="step"><span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg></span><span class="badge">1</span>Patient calls your office</div>
+        <div class="step"><span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h16a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H8l-4 4z"/><path d="M7 8.5h10M7 12h7" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></svg></span>They get an automatic text back</div>
+        <div class="step"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/><path d="M7.5 13h2M11 13h2M14.5 13h2M7.5 16.5h2M11 16.5h2" stroke-linecap="round"/></svg></span>They request an appointment</div>
+        <div class="step"><span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="8" r="3.3"/><circle cx="5.5" cy="9.5" r="2.5"/><circle cx="18.5" cy="9.5" r="2.5"/><path d="M6 19c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5z"/><path d="M1.5 18.5c0-2.4 1.8-4 4-4 .9 0 1.7.2 2.3.7-1 1-1.6 2.3-1.8 3.8H1.5zM22.5 18.5c0-2.4-1.8-4-4-4-.9 0-1.7.2-2.3.7 1 1 1.6 2.3 1.8 3.8h4.5z"/></svg></span>You get more booked patients</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="founder" id="about">
+    <div class="wrap f-grid">
+      <div class="f-phone" aria-label="Example text conversation after a missed call">
+        <div class="ph-top"><span class="ph-name">Bright Dental</span><span class="ph-sub">Text message</span></div>
+        <div class="ph-body">
+          <p class="msg in">Sorry we missed your call! Would you like to book a visit? Just reply with a day.</p>
+          <p class="msg out">Tomorrow morning?</p>
+          <p class="msg in">We have 9:30 or 11:00.</p>
+          <p class="msg out">9:30 please</p>
+          <p class="msg ok">✓ Booking request sent to the office</p>
+        </div>
+      </div>
+      <div class="f-head">
+        <p class="eyebrow">Founder</p>
+        <h2>Setup and support by Mahir Yildiz.</h2>
+        <div class="bar"></div>
+      </div>
+      <div class="f-text">
+        <p>I help independent dental offices in the San Francisco Bay Area make day-to-day communication easier and help you book more patients. From setup to ongoing support, you'll work directly with me.</p>
+        <p>No big company. No complicated systems. Just practical solutions that work for your office.</p>
+      </div>
+      <div class="f-facts">
+        <div class="fact"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-6.5-6.2-6.5-11a6.5 6.5 0 0 1 13 0c0 4.8-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg></span>San Francisco Bay Area focused</div>
+        <div class="fact"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg></span>Independent dental offices</div>
+        <div class="fact"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.6 3.1-6 7-6s7 2.4 7 6"/></svg></span>Personal setup &amp; ongoing support</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div>
+        <h2>Have a question about your office?</h2>
+        <p>Send me a short email. I reply personally, usually the same day.</p>
+      </div>
+      <a class="btn btn-ghost" href="mailto:mahir@getmahirce.com?subject=Question%20about%20your%20dental%20office%20automation">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg>
+        mahir@getmahirce.com
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Mahir Yildiz · Dental Office Automation</span>
+    <span>4100 Redwood Rd Ste 20A #733, Oakland, CA 94619</span>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite">This section is coming soon.</div>
+
+<script>
+(function(){
+  var toast=document.getElementById('toast'), t;
+  document.querySelectorAll('[data-soon]').forEach(function(a){
+    a.setAttribute('href','#'); a.setAttribute('role','button');
+    a.addEventListener('click',function(e){
+      e.preventDefault();
+      toast.textContent=a.textContent.trim()+' page is coming soon.';
+      toast.classList.add('show'); clearTimeout(t); t=setTimeout(function(){toast.classList.remove('show')},2200);
+    });
+  });
+  var btn=document.getElementById('menuBtn'), m=document.getElementById('mnav');
+  btn.addEventListener('click',function(){var o=m.classList.toggle('open');btn.setAttribute('aria-expanded',o)});
+  m.addEventListener('click',function(e){if(e.target.tagName==='A' && !e.target.hasAttribute('data-soon')){m.classList.remove('open');btn.setAttribute('aria-expanded','false')}});
+})();
+</script>
+</body>
+</html>
