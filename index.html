@@ -2,340 +2,443 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Mahir Yildiz | Dental Office Automation</title>
-<meta name="description" content="I help independent dental offices answer patients faster with missed-call text back, simple booking requests, and a website helper.">
+<meta name="description" content="I help independent dental offices answer every patient fast: missed-call text back, simple online booking and a website assistant. Based in the San Francisco Bay Area.">
 <link rel="icon" type="image/png" href="logo-my-sm.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Source+Sans+3:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --navy:#0c2a4c; --navy-2:#123a63; --teal:#0d6f80; --teal-2:#178a9b;
-  --ink:#1c2c3d; --muted:#4a5b6c; --soft:#eef5f7; --line:#dfe9ee;
-  --bg:#ffffff; --card:#ffffff; --icon-bg:#e4f0f3;
-  --serif:"Playfair Display", Georgia, "Times New Roman", serif;
-  --sans:"Source Sans 3", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --navy:#0c2a4c; --navy-2:#123a63; --ink:#16263a; --muted:#4f6072;
+  --teal:#0d6f80; --teal-2:#15899b; --mint:#e6f4f4; --soft:#f3f6f9; --line:#dfe6ee;
+  --bg:#ffffff; --dark:#0a1f38; --dark-2:#10294a;
+  --serif:"Playfair Display",Georgia,"Times New Roman",serif;
+  --sans:"Source Sans 3","Segoe UI",system-ui,-apple-system,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
 a{color:inherit}
 img{display:block;max-width:100%}
-.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
-
-/* coming soon strip */
-.strip{background:var(--navy);color:#dbe8f2;font-size:13.5px;text-align:center;padding:8px 16px;letter-spacing:.02em}
-.strip a{color:#fff;font-weight:600;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.4)}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:28px}
+.eyebrow{font-family:var(--mono);font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);font-weight:500}
+h1,h2,h3{text-wrap:balance}
+h2{font-family:var(--serif);font-weight:700;color:var(--navy);font-size:clamp(30px,3.4vw,44px);line-height:1.12;margin:10px 0 14px}
+h2 em{font-style:italic;color:var(--teal)}
+.lead{color:var(--muted);font-size:18.5px;max-width:60ch}
+section{padding-block:88px}
 
 /* header */
-header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:saturate(1.2) blur(6px);border-bottom:1px solid var(--line)}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:24px;height:84px}
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px;gap:20px}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
-.brand img{width:58px;height:auto}
-.brand .t1{font-family:var(--serif);font-weight:700;font-size:26px;letter-spacing:.06em;color:var(--navy);line-height:1}
-.brand .t2{font-size:10.5px;letter-spacing:.32em;color:var(--navy-2);margin-top:6px;font-weight:600}
-.links{display:flex;gap:30px;align-items:center}
-.links a{text-decoration:none;font-size:15.5px;color:var(--ink);padding:6px 0;border-bottom:2px solid transparent;cursor:pointer}
-.links a.active{color:var(--navy);font-weight:600;border-bottom-color:var(--teal)}
+.brand img{width:42px;height:42px;object-fit:contain}
+.brand .t1{font-family:var(--serif);font-weight:700;font-size:21px;letter-spacing:.05em;color:var(--navy);line-height:1}
+.brand .t2{font-size:10px;letter-spacing:.3em;color:var(--teal);margin-top:5px;font-weight:600}
+.links{display:flex;gap:28px;font-size:15px;font-weight:500}
+.links a{text-decoration:none;color:var(--ink)}
 .links a:hover{color:var(--teal)}
-.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--sans);font-weight:600;font-size:16px;text-decoration:none;border-radius:10px;padding:14px 22px;border:1.5px solid transparent;cursor:pointer;transition:transform .15s ease, box-shadow .15s ease, background .15s ease}
-.btn svg{width:19px;height:19px;flex:none}
-.btn-primary{background:linear-gradient(180deg,var(--navy-2),var(--navy));color:#fff;box-shadow:0 8px 20px -10px rgba(12,42,76,.6)}
-.btn-primary:hover{transform:translateY(-1px);box-shadow:0 12px 24px -10px rgba(12,42,76,.7)}
-.btn-ghost{background:#fff;color:var(--navy);border-color:#b9cbd8}
-.btn-ghost:hover{border-color:var(--navy)}
-.menu-btn{display:none;background:none;border:0;padding:8px;cursor:pointer;color:var(--navy)}
-.menu-btn svg{width:30px;height:30px}
+.btn{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:13px 24px;font-weight:600;font-size:15.5px;text-decoration:none;border:1.5px solid transparent;cursor:pointer;font-family:inherit;transition:transform .15s,background .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:var(--navy);color:#fff}
+.btn-primary:hover{background:var(--navy-2)}
+.btn-ghost{border-color:var(--navy);color:var(--navy);background:transparent}
+.btn-teal{background:var(--teal);color:#fff}
+.menu-btn{display:none;background:none;border:1px solid var(--line);border-radius:10px;padding:8px 12px;font:inherit;color:var(--navy)}
 
 /* hero */
-.hero{position:relative;overflow:hidden;background:linear-gradient(90deg,#fbfdfe 0%,#f3f8fa 55%,#eaf2f5 100%)}
-.hero-grid{display:block;min-height:600px}
-.hero-text{max-width:600px}
-.hero-text{padding:64px 0 56px;position:relative;z-index:2}
-.eyebrow{font-size:13px;letter-spacing:.32em;color:var(--teal);font-weight:600;text-transform:uppercase;margin:0 0 18px}
-h1{font-family:var(--serif);font-weight:700;color:var(--navy);font-size:clamp(40px,5.2vw,66px);line-height:1.04;letter-spacing:-.01em;margin:0 0 24px}
-h1 .teal{color:var(--teal)}
-.lede{font-size:clamp(17px,1.5vw,20px);color:#334556;max-width:34em;margin:0 0 30px}
-.cta{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:38px}
-.perks{display:flex;flex-wrap:wrap;gap:28px}
-.perk{display:flex;align-items:center;gap:12px;font-size:14.5px;color:#2b3c4d;line-height:1.3;max-width:170px}
-.ic{flex:none;display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:var(--icon-bg);color:var(--teal)}
-.ic svg{width:22px;height:22px}
-.hero-photo{position:absolute;right:0;top:0;bottom:0;width:46%}
-.hero-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 18%}
-.hero-photo::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,#f3f8fa 0%,rgba(243,248,250,.0) 22%)}
-.sig{position:absolute;right:48px;bottom:70px;z-index:2;color:#fff;text-align:right;text-shadow:0 2px 12px rgba(0,0,0,.35)}
-.sig .name{font-family:"Great Vibes",cursive;font-size:44px;line-height:1}
-.sig .role{font-size:11px;letter-spacing:.35em;margin-top:6px;border-top:1px solid rgba(255,255,255,.7);padding-top:6px;display:inline-block}
+.hero{padding-block:72px 84px;background:radial-gradient(1200px 500px at 85% 0%,#e9f5f6 0%,rgba(255,255,255,0) 60%)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.hero h1{font-family:var(--serif);font-weight:700;color:var(--navy);font-size:clamp(40px,5.2vw,66px);line-height:1.04;margin:16px 0 20px;letter-spacing:-.01em}
+.hero h1 em{font-style:italic;color:var(--teal)}
+.hero .lead{font-size:19px}
+.cta-row{display:flex;flex-wrap:wrap;gap:14px;margin:30px 0 26px}
+.ticks{display:flex;flex-wrap:wrap;gap:10px 22px;font-size:14.5px;color:var(--muted);padding:0;margin:0;list-style:none}
+.ticks li::before{content:"✓";color:var(--teal);font-weight:700;margin-right:7px}
+.founder-chip{display:flex;align-items:center;gap:14px;margin-top:34px;padding-top:26px;border-top:1px solid var(--line);max-width:460px}
+.founder-chip img{width:58px;height:58px;border-radius:50%;object-fit:cover;object-position:50% 45%;border:2px solid #fff;box-shadow:0 4px 14px -6px rgba(12,42,76,.5)}
+.founder-chip b{display:block;color:var(--navy);font-size:15.5px}
+.founder-chip span{font-size:14px;color:var(--muted)}
+
+/* demo console */
+.console{background:var(--dark);border-radius:20px;padding:20px;color:#dbe7f2;box-shadow:0 40px 80px -40px rgba(10,31,56,.7);position:relative}
+.console-top{display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#8fb0c9;padding:2px 4px 14px;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:14px}
+.live{display:flex;align-items:center;gap:8px;color:#7fe0c3}
+.live i{width:8px;height:8px;border-radius:50%;background:#3ddc97;box-shadow:0 0 0 0 rgba(61,220,151,.6);animation:pulse 1.8s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(61,220,151,.6)}70%{box-shadow:0 0 0 9px rgba(61,220,151,0)}100%{box-shadow:0 0 0 0 rgba(61,220,151,0)}}
+.tag{position:absolute;top:-12px;right:18px;background:#fff;color:var(--navy);font-size:11.5px;padding:4px 10px;border-radius:999px;font-weight:600;box-shadow:0 6px 18px -8px rgba(0,0,0,.4)}
+.feed{display:flex;flex-direction:column;gap:10px;min-height:440px}
+.ev{opacity:0;transform:translateY(8px);transition:opacity .45s,transform .45s}
+.ev.show{opacity:1;transform:none}
+.ev-sys{font-family:var(--mono);font-size:11.5px;color:#f2b880;display:flex;align-items:center;gap:8px;padding:8px 12px;border:1px dashed rgba(242,184,128,.35);border-radius:10px}
+.msg{border-radius:14px;padding:11px 14px;max-width:88%;font-size:15px;line-height:1.45}
+.msg small{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px;opacity:.75}
+.msg.pat{background:#17304f;align-self:flex-start;border:1px solid rgba(255,255,255,.06)}
+.msg.off{background:#0f4a55;align-self:flex-end;border:1px solid rgba(127,224,195,.18)}
+.typing{align-self:flex-end;display:flex;gap:4px;padding:12px 14px;background:#0f4a55;border-radius:14px}
+.typing span{width:6px;height:6px;border-radius:50%;background:#a7d8d3;animation:dot 1s infinite}
+.typing span:nth-child(2){animation-delay:.15s}.typing span:nth-child(3){animation-delay:.3s}
+@keyframes dot{0%,60%,100%{opacity:.25}30%{opacity:1}}
+.booked{background:linear-gradient(135deg,#0f5b4c,#0f4a55);border:1px solid rgba(127,224,195,.35);border-radius:14px;padding:13px 15px;display:flex;gap:12px;align-items:flex-start}
+.booked .ck{width:26px;height:26px;border-radius:50%;background:#3ddc97;color:#06331f;display:grid;place-items:center;font-weight:800;flex:none}
+.booked b{display:block;color:#fff;font-size:15px}
+.booked span{font-size:13px;color:#a9d6cf}
+
+/* problem */
+.problem{background:var(--soft)}
+.problem-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.stat{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 18px}
+.stat b{display:block;font-family:var(--serif);font-size:34px;color:var(--navy);line-height:1}
+.stat span{display:block;margin-top:8px;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600}
 
 /* services */
-.services{position:relative;z-index:3;margin-top:-34px}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.card{background:var(--card);border-radius:16px;padding:26px 24px;box-shadow:0 18px 40px -26px rgba(12,42,76,.35);border:1px solid #edf2f5;display:flex;gap:18px;align-items:flex-start;text-decoration:none}
-.card .ic{width:64px;height:64px}
-.card .ic svg{width:28px;height:28px}
-.card h3{font-family:var(--serif);font-weight:700;font-size:22px;color:var(--navy);margin:2px 0 6px}
-.card p{margin:0;color:var(--muted);font-size:15.5px}
-.card .go{margin-left:auto;align-self:center;flex:none;width:30px;height:30px;border-radius:50%;background:var(--soft);display:grid;place-items:center;color:var(--navy)}
-.card .go svg{width:14px;height:14px}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px}
+.svc{border:1px solid var(--line);border-radius:18px;padding:28px 26px;background:#fff;display:flex;flex-direction:column;gap:10px}
+.svc .num{font-family:var(--mono);font-size:11.5px;letter-spacing:.16em;color:var(--teal)}
+.svc h3{font-family:var(--serif);font-size:24px;color:var(--navy);margin:2px 0 4px}
+.svc p{margin:0;color:var(--muted)}
+.svc ul{margin:8px 0 0;padding:0;list-style:none;display:grid;gap:7px;font-size:15px}
+.svc li::before{content:"→";color:var(--teal);margin-right:8px}
 
-/* flow */
-.flow{margin:28px 0 0;background:var(--soft);border-radius:16px;padding:26px 30px;display:grid;grid-template-columns:200px repeat(4,1fr);align-items:center;gap:10px}
-.flow .label{font-size:13px;letter-spacing:.24em;font-weight:700;color:var(--navy);line-height:1.6}
-.step{display:flex;align-items:center;gap:12px;position:relative;font-size:15px;color:#2b3c4d;line-height:1.3}
-.step .ic{background:#fff;width:52px;height:52px;box-shadow:0 6px 16px -10px rgba(12,42,76,.4)}
-.step .badge{position:absolute;left:36px;top:-4px;background:#e2513b;color:#fff;font-size:10px;font-weight:700;width:17px;height:17px;border-radius:50%;display:grid;place-items:center}
-.step + .step::before{content:"";position:absolute;left:-26px;top:50%;width:18px;height:2px;background:#9fbccb}
-.step + .step::after{content:"";position:absolute;left:-12px;top:calc(50% - 4px);border:5px solid transparent;border-left-color:#9fbccb;border-right:0}
+/* steps */
+.steps{background:var(--dark);color:#d6e3ef}
+.steps h2{color:#fff}.steps h2 em{color:#7fd6cb}
+.steps .lead{color:#a9bdd0}
+.step-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
+.step{border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:28px 24px;background:var(--dark-2)}
+.step .n{font-family:var(--mono);font-size:12px;letter-spacing:.16em;color:#7fd6cb}
+.step h3{font-family:var(--serif);color:#fff;font-size:23px;margin:12px 0 8px}
+.step p{margin:0;font-size:15.5px;color:#a9bdd0}
+.step .when{display:inline-block;margin-top:16px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:#f2b880}
 
-/* founder */
-.f-phone{background:#fff;border:6px solid var(--navy);border-radius:26px;padding:10px 10px 14px;box-shadow:0 14px 30px -20px rgba(12,42,76,.6);max-width:220px}
-.ph-top{text-align:center;border-bottom:1px solid #e6ecf2;padding-bottom:8px;margin-bottom:8px}
-.ph-name{display:block;font-weight:700;color:var(--navy);font-size:14px}
-.ph-sub{font-size:11px;color:#7a8a99}
-.ph-body{display:flex;flex-direction:column;gap:6px}
-.msg{margin:0;font-size:12.5px;line-height:1.35;padding:7px 10px;border-radius:14px;max-width:85%}
-.msg.in{background:#eef2f6;color:#22313f;align-self:flex-start;border-bottom-left-radius:4px}
-.msg.out{background:var(--teal);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
-.msg.ok{align-self:center;font-size:11.5px;font-weight:600;color:var(--teal);background:none;padding:2px 0}
+/* compare */
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:40px}
+.col{border-radius:18px;padding:30px 28px}
+.col h3{margin:0 0 16px;font-size:19px}
+.col ul{margin:0;padding:0;list-style:none;display:grid;gap:12px}
+.col.bad{background:var(--soft);border:1px solid var(--line)}
+.col.bad h3{color:var(--muted)}
+.col.bad li::before{content:"✕";color:#b4544a;font-weight:700;margin-right:10px}
+.col.good{background:var(--mint);border:1px solid #bfe0df}
+.col.good h3{color:var(--navy)}
+.col.good li::before{content:"✓";color:var(--teal);font-weight:700;margin-right:10px}
 
-.founder{padding:56px 0 64px}
-.f-grid{display:grid;grid-template-columns:200px 1fr 1.25fr 300px;gap:34px;align-items:center}
-.f-photo{border-radius:14px;overflow:hidden;box-shadow:0 14px 30px -20px rgba(12,42,76,.6)}
-.f-head .eyebrow{margin-bottom:10px}
-.f-head h2{font-family:var(--serif);font-weight:700;color:var(--navy);font-size:clamp(30px,3vw,40px);line-height:1.12;margin:0}
-.f-head .bar{width:46px;height:3px;background:var(--teal);margin-top:18px;border-radius:2px}
-.f-text p{margin:0 0 10px;color:#3a4b5c;font-size:16px}
-.f-facts{background:var(--soft);border-radius:14px;padding:18px 20px;display:grid;gap:14px}
-.fact{display:flex;align-items:center;gap:12px;font-size:14.5px;color:#2b3c4d}
-.fact .ic{width:38px;height:38px;background:#fff}
-.fact .ic svg{width:18px;height:18px}
+/* about */
+.about{background:var(--soft)}
+.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center}
+.about-photo{border-radius:22px;overflow:hidden;box-shadow:0 30px 60px -36px rgba(12,42,76,.6);aspect-ratio:4/5;max-width:420px}
+.about-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+.sig{font-family:var(--serif);font-style:italic;color:var(--teal);font-size:22px;margin-top:6px}
+.facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.facts span{background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:14px;color:var(--navy);font-weight:600}
 
-/* contact */
-.contact{background:linear-gradient(180deg,var(--navy-2),var(--navy));color:#fff}
-.contact .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;padding-top:40px;padding-bottom:40px}
-.contact h2{font-family:var(--serif);font-size:clamp(26px,2.6vw,34px);margin:0 0 6px}
-.contact p{margin:0;color:#cfe0ee}
-.contact .btn-ghost{border-color:#fff}
-footer{background:#081f39;color:#9fb6ca;font-size:13.5px}
-footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;padding-top:18px;padding-bottom:18px}
+/* faq */
+.faq{max-width:820px;margin:36px auto 0;display:grid;gap:12px}
+details{border:1px solid var(--line);border-radius:14px;padding:18px 22px;background:#fff}
+summary{cursor:pointer;font-weight:600;color:var(--navy);font-size:17px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--teal);font-size:22px;line-height:1}
+details[open] summary::after{content:"–"}
+details p{margin:12px 0 0;color:var(--muted)}
 
-/* coming soon toast */
-.toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:var(--navy);color:#fff;padding:12px 20px;border-radius:10px;font-size:15px;box-shadow:0 14px 30px -12px rgba(0,0,0,.45);transition:all .25s ease;z-index:50}
-.toast.show{opacity:1;transform:translate(-50%,0)}
+/* demo form */
+.demo{background:var(--navy);color:#dbe8f2}
+.demo-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.demo h2{color:#fff}.demo h2 em{color:#7fd6cb}
+.demo .lead{color:#b8cbdc}
+.demo .eyebrow{color:#7fd6cb}
+.contact-lines{margin-top:28px;display:grid;gap:10px;font-size:16px}
+.contact-lines b{color:#fff}
+form{background:#fff;border-radius:20px;padding:30px;color:var(--ink);display:grid;gap:14px}
+label{font-size:13.5px;font-weight:600;color:var(--navy);display:grid;gap:6px}
+input,textarea,select{font:inherit;font-size:16px;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:#fbfcfd;color:var(--ink);width:100%}
+input:focus,textarea:focus,select:focus{outline:2px solid var(--teal-2);outline-offset:1px;border-color:transparent}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form-note{font-size:13px;color:var(--muted);margin:0}
+.form-ok{display:none;background:var(--mint);border-radius:12px;padding:14px;color:var(--navy);font-weight:600}
 
-/* mobile menu */
-.mnav{display:none}
+footer{background:var(--dark);color:#8fa6bb;font-size:14px;padding-block:34px}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
+.foot b{color:#fff}
 
-@media (max-width:1060px){
-  .links{gap:20px}
-  .f-grid{grid-template-columns:170px 1fr;}
-  .f-text,.f-facts{grid-column:1 / -1}
-  .flow{grid-template-columns:1fr 1fr;row-gap:22px}
-  .flow .label{grid-column:1 / -1}
-  .step + .step::before,.step + .step::after{display:none}
+/* responsive */
+@media (max-width:980px){
+  .hero-grid,.problem-grid,.about-grid,.demo-grid{grid-template-columns:1fr;gap:40px}
+  .svc-grid,.step-grid{grid-template-columns:1fr}
+  .cmp{grid-template-columns:1fr}
+  .about-photo{max-width:360px}
 }
-@media (max-width:900px){
-  .links,.nav .btn{display:none}
+@media (max-width:760px){
+  .wrap{padding-inline:18px}
+  section{padding-block:64px}
+  .links{display:none;position:absolute;top:74px;left:0;right:0;background:#fff;flex-direction:column;padding:16px 18px;border-bottom:1px solid var(--line);gap:14px}
+  .links.open{display:flex}
   .menu-btn{display:block}
-  .nav{height:72px}
-  .brand img{width:48px}
-  .brand .t1{font-size:22px}
-  .brand .t2{font-size:9px}
-  .mnav.open{display:flex;flex-direction:column;border-top:1px solid var(--line);padding:8px 28px 16px;background:#fff}
-  .mnav a{padding:12px 0;text-decoration:none;border-bottom:1px solid #f0f4f6;cursor:pointer}
-  .hero-grid{min-height:0}
-  .hero-photo{position:absolute;right:0;top:0;bottom:0;width:52%;}
-  .hero-photo::before{background:linear-gradient(90deg,rgba(246,250,251,.95) 0%,rgba(246,250,251,.35) 28%,rgba(246,250,251,0) 50%)}
-  .hero-photo img{object-position:68% 12%}
-  .sig{display:none}
-  .hero-text{padding:36px 0 64px}
-  h1{max-width:9.5em}
-  .lede{max-width:20em}
-  .cta{flex-direction:column;align-items:flex-start;max-width:320px}
-  .cta .btn{width:100%;justify-content:center}
-  .perks{display:none}
-  .cards{grid-template-columns:1fr}
+  .nav .btn-primary{display:none}
+  .stats{grid-template-columns:1fr 1fr 1fr;gap:10px}
+  .stat{padding:16px 12px}.stat b{font-size:26px}
+  .row2{grid-template-columns:1fr}
+  .feed{min-height:470px}
 }
-@media (max-width:560px){
-  body{font-size:16px}
-  .wrap{padding:0 18px}
-  .hero-photo{width:58%}
-  .hero-text{padding:28px 0 56px}
-  h1{font-size:31px;max-width:none}
-  .hero-text .eyebrow,.hero-text h1,.hero-text .lede{width:60%}
-  .hero-text .eyebrow{font-size:10.5px;letter-spacing:.22em}
-  .lede{font-size:15px;max-width:none}
-  .cta{max-width:62%}
-  .cta .btn{padding:12px 14px;font-size:15px}
-  .card{padding:20px 18px}
-  .card .ic{width:56px;height:56px}
-  .flow{padding:20px 18px;grid-template-columns:1fr 1fr}
-  .f-grid{grid-template-columns:1fr;gap:20px}
-  .f-phone{max-width:240px;margin:0 auto}
-}
-@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+@media (prefers-reduced-motion:reduce){.ev{transition:none}.live i,.typing span{animation:none}}
 </style>
 </head>
 <body>
 
-<div class="strip">Our full website is coming soon. Questions? Email me anytime at <a href="mailto:mahir@getmahirce.com">mahir@getmahirce.com</a></div>
-
 <header>
   <div class="wrap nav">
-    <a class="brand" href="#home" aria-label="Mahir Yildiz, Dental Office Automation">
+    <a class="brand" href="#top">
       <img src="logo-my-sm.png" alt="">
       <div><div class="t1">MAHIR YILDIZ</div><div class="t2">DENTAL OFFICE AUTOMATION</div></div>
     </a>
-    <nav class="links" aria-label="Main">
-      <a href="#home" class="active">Home</a>
+    <nav class="links" id="links">
+      <a href="#how">How it works</a>
       <a href="#services">Services</a>
       <a href="#about">About</a>
-      <a href="#how">How It Works</a>
-      <a data-soon>Results</a>
-      <a href="#contact">Contact</a>
+      <a href="#faq">FAQ</a>
     </nav>
-    <a class="btn btn-primary" href="mailto:mahir@getmahirce.com?subject=Question%20about%20your%20dental%20office%20automation">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg>
-      Email Mahir
-    </a>
-    <button class="menu-btn" aria-label="Open menu" aria-expanded="false" id="menuBtn">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-    </button>
+    <a class="btn btn-primary" href="#demo">Book a demo →</a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="links">Menu</button>
   </div>
-  <nav class="mnav" id="mnav" aria-label="Mobile">
-    <a href="#home">Home</a><a href="#services">Services</a><a href="#about">About</a><a href="#how">How It Works</a><a data-soon>Results</a><a href="#contact">Contact</a>
-  </nav>
 </header>
 
-<main id="home">
-  <section class="hero">
-    <div class="hero-photo">
-        <img src="mahir-hero.jpg" alt="Mahir Yildiz at his desk">
-        <div class="sig"><div class="name">Mahir Yildiz</div><div class="role">FOUNDER</div></div>
+<main id="top">
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">For independent dental offices</div>
+      <h1>Every call answered.<br>Every patient <em>booked.</em></h1>
+      <p class="lead">When your front desk is busy or the office is closed, patients still get a fast, friendly reply and a real appointment time. Simple systems, set up for your office, with personal support from me.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#demo">Book a 15-minute demo →</a>
+        <a class="btn btn-ghost" href="#how">See how it works</a>
       </div>
-    <div class="wrap hero-grid">
-      <div class="hero-text">
-        <p class="eyebrow">Simpler systems. Happier patients.</p>
-        <h1>Turn missed calls into <span class="teal">more booked</span> patients.</h1>
-        <p class="lede">I help independent dental offices in the San Francisco Bay Area answer patients faster with missed-call text back, simple booking requests, and a website helper.</p>
-        <div class="cta">
-          <a class="btn btn-primary" href="mailto:mahir@getmahirce.com?subject=Question%20about%20your%20dental%20office%20automation">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg>
-            Email Mahir
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 6 6 6-6 6"/></svg>
-          </a>
-          <a class="btn btn-ghost" href="#how">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M10 8.5v7l5.5-3.5z" fill="currentColor" stroke="none"/></svg>
-            See how it works
-          </a>
-        </div>
-        <div class="perks">
-          <div class="perk"><span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="4" y="13" width="3.5" height="7" rx="1"/><rect x="10.25" y="9" width="3.5" height="11" rx="1"/><rect x="16.5" y="5" width="3.5" height="15" rx="1"/></svg></span>More booked patients</div>
-          <div class="perk"><span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="8" r="3.3"/><circle cx="5.5" cy="9.5" r="2.5"/><circle cx="18.5" cy="9.5" r="2.5"/><path d="M6 19c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5z"/><path d="M1.5 18.5c0-2.4 1.8-4 4-4 .9 0 1.7.2 2.3.7-1 1-1.6 2.3-1.8 3.8H1.5zM22.5 18.5c0-2.4-1.8-4-4-4-.9 0-1.7.2-2.3.7 1 1 1.6 2.3 1.8 3.8h4.5z"/></svg></span>A better patient experience</div>
-          <div class="perk"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3 5 6v5c0 4.5 3 8.3 7 10 4-1.7 7-5.5 7-10V6z"/><path d="m9 12 2 2 4-4"/></svg></span>Simple, reliable solutions</div>
-        </div>
+      <ul class="ticks">
+        <li>Your phone number stays the same</li>
+        <li>Works with your current calendar</li>
+        <li>Month to month, no contract</li>
+      </ul>
+      <div class="founder-chip">
+        <img src="mahir-avatar.jpg" alt="Mahir Yildiz">
+        <div><b>Mahir Yildiz, Founder</b><span>San Francisco Bay Area · you work directly with me</span></div>
       </div>
     </div>
-  </section>
 
-  <section class="services" id="services">
-    <div class="wrap">
-      <div class="cards">
-        <a class="card" href="#how">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 12a8 7 0 1 1 3.2 5.6L4 19l1-3.4A6.8 6.8 0 0 1 4 12z"/><circle cx="8.5" cy="12" r=".9" fill="currentColor"/><circle cx="12" cy="12" r=".9" fill="currentColor"/><circle cx="15.5" cy="12" r=".9" fill="currentColor"/></svg></span>
-          <div><h3>Missed-call text back</h3><p>Automatically text patients who call and don't reach you, so you never miss an opportunity.</p></div>
-          <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span>
-        </a>
-        <a class="card" href="#how">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/><path d="M7.5 13h2M11 13h2M14.5 13h2M7.5 16.5h2M11 16.5h2" stroke-linecap="round"/></svg></span>
-          <div><h3>Simple booking requests</h3><p>Let patients easily request appointments, with a smooth and friendly experience.</p></div>
-          <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span>
-        </a>
-        <a class="card" href="#how">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="4" y="5" width="16" height="11" rx="1.5"/><path d="M2 19h20"/></svg></span>
-          <div><h3>Website helper</h3><p>A cleaner, more helpful website that answers common questions and guides patients to book.</p></div>
-          <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span>
-        </a>
-      </div>
-
-      <div class="flow" id="how">
-        <div class="label">FROM MISSED CALL<br>TO BOOKING REQUEST</div>
-        <div class="step"><span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1z"/></svg></span><span class="badge">1</span>Patient calls your office</div>
-        <div class="step"><span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h16a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H8l-4 4z"/><path d="M7 8.5h10M7 12h7" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></svg></span>They get an automatic text back</div>
-        <div class="step"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/><path d="M7.5 13h2M11 13h2M14.5 13h2M7.5 16.5h2M11 16.5h2" stroke-linecap="round"/></svg></span>They request an appointment</div>
-        <div class="step"><span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="8" r="3.3"/><circle cx="5.5" cy="9.5" r="2.5"/><circle cx="18.5" cy="9.5" r="2.5"/><path d="M6 19c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5z"/><path d="M1.5 18.5c0-2.4 1.8-4 4-4 .9 0 1.7.2 2.3.7-1 1-1.6 2.3-1.8 3.8H1.5zM22.5 18.5c0-2.4-1.8-4-4-4-.9 0-1.7.2-2.3.7 1 1 1.6 2.3 1.8 3.8h4.5z"/></svg></span>You get more booked patients</div>
+    <div class="console" aria-label="Example: a missed call turned into a booked appointment">
+      <div class="tag">Sample conversation · demo</div>
+      <div class="console-top"><span class="live"><i></i>Live · after-hours</span><span>Tue 6:42 PM</span></div>
+      <div class="feed" id="feed">
+        <div class="ev ev-sys">☎ Missed call from (510) ••• •• 18 · office closed</div>
+        <div class="ev msg off"><small>Bright Dental · auto text</small>Hi, this is Bright Dental. Sorry we missed your call! How can we help you today?</div>
+        <div class="ev msg pat"><small>Patient</small>Hi, I have a toothache on the left side since yesterday. Can I come in tomorrow?</div>
+        <div class="ev typing"><span></span><span></span><span></span></div>
+        <div class="ev msg off"><small>Bright Dental</small>Sorry to hear that. Dr. Lee has 8:30 AM or 11:15 AM open tomorrow. Which one works for you?</div>
+        <div class="ev msg pat"><small>Patient</small>8:30 please. I'm a new patient.</div>
+        <div class="ev msg off"><small>Bright Dental</small>Perfect, you're booked for tomorrow at 8:30 AM. I've texted you the address and a short new-patient form.</div>
+        <div class="ev booked"><div class="ck">✓</div><div><b>Appointment booked</b><span>Added to the office calendar · front desk notified · no phone tag</span></div></div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="founder" id="about">
-    <div class="wrap f-grid">
-      <div class="f-phone" aria-label="Example text conversation after a missed call">
-        <div class="ph-top"><span class="ph-name">Bright Dental</span><span class="ph-sub">Text message</span></div>
-        <div class="ph-body">
-          <p class="msg in">Sorry we missed your call! Would you like to book a visit? Just reply with a day.</p>
-          <p class="msg out">Tomorrow morning?</p>
-          <p class="msg in">We have 9:30 or 11:00.</p>
-          <p class="msg out">9:30 please</p>
-          <p class="msg ok">✓ Booking request sent to the office</p>
-        </div>
+<section class="problem">
+  <div class="wrap problem-grid">
+    <div>
+      <div class="eyebrow">The problem</div>
+      <h2>Patients call once. <em>Then they call someone else.</em></h2>
+      <p class="lead">The front desk is checking someone in. Another line is ringing. It's lunch time, or it's 6 PM. The call goes to voicemail, most people don't leave a message, and a new patient books with the next office on Google.</p>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>24/7</b><span>Patients get a reply</span></div>
+      <div class="stat"><b>&lt;1 min</b><span>Reply after a missed call</span></div>
+      <div class="stat"><b>0</b><span>Phone tag for your staff</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="eyebrow">What I set up</div>
+    <h2>Three simple tools. <em>One goal: more booked visits.</em></h2>
+    <p class="lead">You choose what fits your office. Nothing is added unless you want it.</p>
+    <div class="svc-grid">
+      <article class="svc">
+        <div class="num">01</div>
+        <h3>Missed-call text back</h3>
+        <p>When a call is missed, the patient gets a friendly text in seconds and can book right there.</p>
+        <ul><li>After hours, lunch and busy times</li><li>Sent from your office name</li><li>Staff see every conversation</li></ul>
+      </article>
+      <article class="svc">
+        <div class="num">02</div>
+        <h3>Online booking</h3>
+        <p>Patients pick a real open time on your website, instead of a request form and a call back.</p>
+        <ul><li>New and existing patients</li><li>Confirmations and reminders</li><li>Fits your current calendar</li></ul>
+      </article>
+      <article class="svc">
+        <div class="num">03</div>
+        <h3>Website assistant</h3>
+        <p>A helpful chat on your site that answers common questions and guides people to book.</p>
+        <ul><li>Hours, insurance, services</li><li>Hands off to staff when needed</li><li>Your words, your tone</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="steps" id="how">
+  <div class="wrap">
+    <div class="eyebrow" style="color:#7fd6cb">How it works</div>
+    <h2>From first call to live <em>in three steps.</em></h2>
+    <p class="lead">No big project, no long meetings. You stay in control at every step.</p>
+    <div class="step-grid">
+      <div class="step"><div class="n">STEP 01</div><h3>15-minute demo</h3><p>I show you how it works for an office like yours, using your real website.</p><span class="when">DAY 1</span></div>
+      <div class="step"><div class="n">STEP 02</div><h3>Short setup form</h3><p>Your hours, services and how you want patients greeted. You approve every message before it goes live.</p><span class="when">DAY 1–2</span></div>
+      <div class="step"><div class="n">STEP 03</div><h3>Live and supported</h3><p>Patients start getting fast replies. You get a simple weekly summary, and you can reach me anytime.</p><span class="when">WITHIN A FEW DAYS</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Why not just voicemail?</div>
+    <h2>Voicemail waits. <em>Patients don't.</em></h2>
+    <div class="cmp">
+      <div class="col bad">
+        <h3>Voicemail or a busy front desk</h3>
+        <ul>
+          <li>Rings out after hours and at lunch</li>
+          <li>Most callers hang up without a message</li>
+          <li>Call backs happen hours later</li>
+          <li>Request forms still need phone tag</li>
+          <li>No idea how many patients you lost</li>
+        </ul>
       </div>
-      <div class="f-head">
-        <p class="eyebrow">Founder</p>
-        <h2>Setup and support by Mahir Yildiz.</h2>
-        <div class="bar"></div>
-      </div>
-      <div class="f-text">
-        <p>I help independent dental offices in the San Francisco Bay Area make day-to-day communication easier and help you book more patients. From setup to ongoing support, you'll work directly with me.</p>
-        <p>No big company. No complicated systems. Just practical solutions that work for your office.</p>
-      </div>
-      <div class="f-facts">
-        <div class="fact"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-6.5-6.2-6.5-11a6.5 6.5 0 0 1 13 0c0 4.8-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg></span>San Francisco Bay Area focused</div>
-        <div class="fact"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg></span>Independent dental offices</div>
-        <div class="fact"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.6 3.1-6 7-6s7 2.4 7 6"/></svg></span>Personal setup &amp; ongoing support</div>
+      <div class="col good">
+        <h3>With your new setup</h3>
+        <ul>
+          <li>Every missed call gets a reply in seconds</li>
+          <li>Patients pick a real time and book</li>
+          <li>Front desk sees everything in one place</li>
+          <li>Confirmations and reminders go out on their own</li>
+          <li>A short weekly summary of what was booked</li>
+        </ul>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="contact" id="contact">
-    <div class="wrap">
-      <div>
-        <h2>Have a question about your office?</h2>
-        <p>Send me a short email. I reply personally, usually the same day.</p>
-      </div>
-      <a class="btn btn-ghost" href="mailto:mahir@getmahirce.com?subject=Question%20about%20your%20dental%20office%20automation">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg>
-        mahir@getmahirce.com
-      </a>
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div class="about-photo"><img src="mahir-hero.jpg" alt="Mahir Yildiz at his desk"></div>
+    <div>
+      <div class="eyebrow">About</div>
+      <h2>Hi, I'm Mahir.</h2>
+      <p class="lead">I help independent dental offices in the San Francisco Bay Area make day-to-day communication easier. I set everything up for you, explain it in plain words, and stay available after launch. No big company, no call center, no complicated software to learn.</p>
+      <p class="lead">My background is in web development and digital marketing, so I care about one thing: patients finding you, and booking with you.</p>
+      <div class="sig">Mahir Yildiz</div>
+      <div class="facts"><span>Bay Area based</span><span>Independent offices</span><span>Personal support</span></div>
     </div>
-  </section>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div style="text-align:center">
+      <div class="eyebrow">Questions</div>
+      <h2>What office owners <em>usually ask.</em></h2>
+    </div>
+    <div class="faq">
+      <details><summary>Does our phone number change?</summary><p>No. You keep your number. Missed calls simply get a text reply from your office name.</p></details>
+      <details><summary>Will it work with our scheduling software?</summary><p>In most cases, yes. On the demo we look at what you use today and I tell you honestly what is possible.</p></details>
+      <details><summary>What if a patient asks something it can't answer?</summary><p>It passes the conversation to your front desk, so a real person takes over. Nothing urgent gets lost.</p></details>
+      <details><summary>Is there a long contract?</summary><p>No. It's month to month, and you can stop any time.</p></details>
+      <details><summary>Do we have to change our website?</summary><p>No. Booking and the website assistant can be added to the site you already have.</p></details>
+      <details><summary>How long does setup take?</summary><p>Usually a few days after the setup form. You approve the messages before anything goes live.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="demo" id="demo">
+  <div class="wrap demo-grid">
+    <div>
+      <div class="eyebrow">Book a demo</div>
+      <h2>See it working <em>for your office.</em></h2>
+      <p class="lead">15 minutes, no slides. I'll show you what a missed call and a booking would look like for your practice. Then you decide.</p>
+      <div class="contact-lines">
+        <div><b>Email:</b> mahir@getmahirce.com</div>
+        <div><b>Based in:</b> Oakland, California</div>
+      </div>
+    </div>
+    <form id="demoForm" novalidate>
+      <div class="row2">
+        <label>Your name<input name="name" required autocomplete="name"></label>
+        <label>Office name<input name="office" required></label>
+      </div>
+      <div class="row2">
+        <label>Email<input name="email" type="email" required autocomplete="email"></label>
+        <label>City<input name="city"></label>
+      </div>
+      <label>What would help your office most?
+        <select name="need">
+          <option>Missed-call text back</option>
+          <option>Online booking</option>
+          <option>Website assistant</option>
+          <option>Not sure yet</option>
+        </select>
+      </label>
+      <label>Anything else? (optional)<textarea name="msg" rows="3"></textarea></label>
+      <button class="btn btn-teal" type="submit">Request my demo →</button>
+      <p class="form-note">I reply personally, usually within one business day.</p>
+      <div class="form-ok" id="formOk">Thank you! Your email app should open with your request. If it doesn't, write to mahir@getmahirce.com.</div>
+    </form>
+  </div>
+</section>
 </main>
 
 <footer>
-  <div class="wrap">
-    <span>© 2026 Mahir Yildiz · Dental Office Automation</span>
-    <span>4100 Redwood Rd Ste 20A #733, Oakland, CA 94619</span>
+  <div class="wrap foot">
+    <div><b>Mahir Yildiz</b> · Dental Office Automation</div>
+    <div>4100 Redwood Rd Ste 20A #733, Oakland, CA 94619 · mahir@getmahirce.com</div>
+    <div>© 2026 Mahir Yildiz</div>
   </div>
 </footer>
 
-<div class="toast" id="toast" role="status" aria-live="polite">This section is coming soon.</div>
-
 <script>
 (function(){
-  var toast=document.getElementById('toast'), t;
-  document.querySelectorAll('[data-soon]').forEach(function(a){
-    a.setAttribute('href','#'); a.setAttribute('role','button');
-    a.addEventListener('click',function(e){
-      e.preventDefault();
-      toast.textContent=a.textContent.trim()+' page is coming soon.';
-      toast.classList.add('show'); clearTimeout(t); t=setTimeout(function(){toast.classList.remove('show')},2200);
+  var btn=document.getElementById('menuBtn'),links=document.getElementById('links');
+  btn.addEventListener('click',function(){var o=links.classList.toggle('open');btn.setAttribute('aria-expanded',o?'true':'false')});
+  links.addEventListener('click',function(e){if(e.target.tagName==='A'){links.classList.remove('open');btn.setAttribute('aria-expanded','false')}});
+
+  // demo conversation
+  var evs=[].slice.call(document.querySelectorAll('#feed .ev'));
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var delays=[500,1300,2200,1100,1500,1900,1700,1500];
+  function run(){
+    evs.forEach(function(e){e.classList.remove('show');e.style.display=''});
+    var t=0;
+    evs.forEach(function(e,i){
+      t+=delays[i]||1200;
+      setTimeout(function(){
+        if(e.classList.contains('typing')){e.classList.add('show');setTimeout(function(){e.style.display='none'},1400)}
+        else e.classList.add('show');
+      },t);
     });
+    setTimeout(run,t+6000);
+  }
+  if(reduce){evs.forEach(function(e){if(!e.classList.contains('typing'))e.classList.add('show');else e.style.display='none'})}
+  else run();
+
+  // demo form -> email
+  document.getElementById('demoForm').addEventListener('submit',function(e){
+    e.preventDefault();var f=e.target;
+    if(!f.name.value||!f.office.value||!f.email.value){f.reportValidity&&f.reportValidity();return}
+    var body='Name: '+f.name.value+'\nOffice: '+f.office.value+'\nEmail: '+f.email.value+'\nCity: '+f.city.value+'\nInterested in: '+f.need.value+'\n\n'+f.msg.value;
+    window.location.href='mailto:mahir@getmahirce.com?subject='+encodeURIComponent('Demo request: '+f.office.value)+'&body='+encodeURIComponent(body);
+    document.getElementById('formOk').style.display='block';
   });
-  var btn=document.getElementById('menuBtn'), m=document.getElementById('mnav');
-  btn.addEventListener('click',function(){var o=m.classList.toggle('open');btn.setAttribute('aria-expanded',o)});
-  m.addEventListener('click',function(e){if(e.target.tagName==='A' && !e.target.hasAttribute('data-soon')){m.classList.remove('open');btn.setAttribute('aria-expanded','false')}});
 })();
 </script>
 </body>
